@@ -1,0 +1,14 @@
+#!/bin/bash
+
+EXTRA_ARGS=$@
+
+rm -f CMakeCache.txt
+
+LOCAL=/usr/local-gcc47-nompi
+
+cmake \
+ -D CMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+ -D CMAKE_EXE_LINKER_FLAGS:STRING="-L$LOCAL/lib" \
+ -D CMAKE_CXX_FLAGS:STRING="${CMAKE_CXX_FLAGS} -g -O3 -std=c++11" \
+ -D TIC_TBB_ROOT:STRING="/usr/local/tbb40_20120408oss" \
+ $EXTRA_ARGS ..
