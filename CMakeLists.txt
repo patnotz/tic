@@ -52,7 +52,7 @@ add_custom_target(
 set(Boost_NO_SYSTEM_PATHS TRUE)
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_ADDITIONAL_VERSIONS 1.47 1.47.0 1.48 1.48.0 1.49 1.49.0)
-find_package(Boost 1.49 REQUIRED COMPONENTS filesystem system program_options chrono)
+find_package(Boost 1.49 REQUIRED COMPONENTS filesystem system program_options chrono regex)
 
 include_directories (
     src
